@@ -1,0 +1,49 @@
+[general]
+
+gpus = '1,2'
+python_seed = 55
+torch_seed = 55
+torch_cuda_seed = 55
+
+[params]
+
+dropout_p = 0.5
+base = 16
+height = 50
+width = 100
+n_rnn = 2
+n_layers = 1
+bi = true
+mode = 'GRU'
+hidden = 256
+
+[model]
+
+load_weights = false
+pretrained = ''
+
+[train]
+
+train = true
+path = '/home/code/fengdalu/LipNet/datasets/GRID/train'
+align = '/home/code/fengdalu/LipNet/datasets/GRID/align'
+batch_size = 72
+num_threads = 0
+summary_iter = 10
+tot_epoch = 1000
+
+
+[validation]
+
+validate = false
+path = '/home/code/fengdalu/LipNet/datasets/GRID/val'
+align = '/home/code/fengdalu/LipNet/datasets/GRID/align'
+batch_size = 40
+validate_iter = 20
+num_threads = 8
+
+[snapshot]
+
+save_iter = 100
+save_dir = 'models'
+save_prefix = 'lipnet'
